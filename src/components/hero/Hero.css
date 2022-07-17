@@ -1,3 +1,5 @@
-.hero{
-    width:100%;
+.hero .hero-slide{
+    display: flex;
+    width: 1920px;
+    height: 100vh;
 }

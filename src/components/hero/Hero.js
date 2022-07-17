@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import "./Hero.css"
 
 import SwiperCore, {Autoplay} from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import ArrowBackIosOutlined from '@mui/icons-material';
 
 import tmdb from '../../apis/tmdb';
-// import MovieCard from '../movieCard/MovieCard';
-import HeroItems from './HeroItems';
 
+import HeroItems from './HeroItems';
 
 
 const Hero = () => {
@@ -18,9 +17,10 @@ const Hero = () => {
 
     useEffect(() => {
         const fetchMovies = async () => {
+          
             try{
-                const fetchMovies = await tmdb.get("/discover/movie");
-                setMovieItems(fetchMovies.data.results);
+                const fetchedMovies = await tmdb.get("/discover/movie");
+                setMovieItems(fetchedMovies.data.results.slice(1, 6));
 
             } catch (error) {
                 console.log(error);
@@ -30,22 +30,17 @@ const Hero = () => {
     },[]);
   return (
     <div className='hero'>
-        <Swiper
-            modules={[Autoplay]}
-            grapCursor={true}
-            spaceBetween={0}
-            slidesPerView={1}
-        >
+        <div className="hero-slide">
             {movieItems.map(movie => (
-            <SwiperSlide>
-              <HeroItems key={movie.title} movie={movie}/>
-            </SwiperSlide>
+                    <div className="hero-slidercontent">
+                    {<HeroItems key={movie.title} movie={movie}/>}
+                    </div>
                 ))
             }
-        </Swiper>
+        </div>
 
     </div>
   );
 }
 
-export default Hero
+export default Hero;
