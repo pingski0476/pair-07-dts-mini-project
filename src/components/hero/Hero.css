@@ -1,5 +1,45 @@
+.hero{
+  overflow: hidden;
+  transform: translateX(0px);
+  transition: all 1s ease-in-out;
+}
 .hero .hero-slide{
     display: flex;
     width: 1920px;
     height: 100vh;
+
 }
+.hero .left{
+    z-index: 5;
+    position: absolute;
+    left: 2%;
+    top: 40%;
+    color:white;
+    font-size: 100px;
+    cursor: pointer;
+}
+.hero .right{
+    z-index: 5;
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    color:white;
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.hero span{
+    color : red;
+    font-size: 80px;
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    z-index: 5;
+}
+
+.hero-slidercontent{
+    position: relative;
+    transform: translateX(0px);
+    transition: all 1s ease;
+}
+

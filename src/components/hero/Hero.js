@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./Hero.css"
-
-import SwiperCore, {Autoplay} from 'swiper';
-import ArrowBackIosOutlined from '@mui/icons-material';
 
 import tmdb from '../../apis/tmdb';
 
 import HeroItems from './HeroItems';
+import { ArrowBackIosRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 
 
 const Hero = () => {
 
-    SwiperCore.use([Autoplay]);
 
     const [movieItems, setMovieItems] = useState([]);
 
@@ -28,16 +25,33 @@ const Hero = () => {
         }
         fetchMovies();
     },[]);
+
+    const heroRef = useRef();
+
+    const handleClick = (direction) =>{
+        let distance = heroRef.current.getBoundingClientRect().x -52;
+        if(direction === "left"){
+                heroRef.current.style.transform = `translateX(${-1920 + distance}px)`
+        }
+        // console.log(distance);
+        if(direction === "right"){
+            heroRef.current.style.transform = `translateX(${1920 + distance}px)`
+    }
+    }
   return (
     <div className='hero'>
-        <div className="hero-slide">
+            <span>Discover</span>
+            <ArrowBackIosRounded className='left'onClick={() => handleClick("left")}/>
+        <div className="hero-slide"  ref={heroRef}>
             {movieItems.map(movie => (
-                    <div className="hero-slidercontent">
+                <div className="hero-slidercontent">
                     {<HeroItems key={movie.title} movie={movie}/>}
-                    </div>
+                </div>
                 ))
             }
         </div>
+            <ArrowForwardIosRounded className='right' onClick={() => handleClick("right")}/>
+ 
 
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import "./HeroItem.css";
+// import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 const BACKGROUND_IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
@@ -7,7 +8,6 @@ const HeroItems = ({ movie }) => {
   return (
     <div className="hero-items">
       <div className="hero-bg-image">
-        <span className="hero-title">Discover</span>
         {movie.backdrop_path && <img src={BACKGROUND_IMAGE_URL + movie.backdrop_path} alt={movie.title} />}
       </div>
       <div className="hero-content">
