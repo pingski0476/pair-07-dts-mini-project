@@ -32,11 +32,20 @@
 
 .list div {
   display: grid;
-  gap: 15px;
+  gap: 5px;
   grid-template-columns: repeat(10, 1fr);
   margin-bottom: 10vh;
 }
 .container-title {
   color: white;
 
+}
+.movies-item {
+  cursor: pointer;
+  /* display: flex; */
+
+}
+.movies-item:hover{
+  opacity: 0.7;
+  transition: "0.5s";
 }

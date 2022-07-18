@@ -1,10 +1,12 @@
 import React from 'react'
-import MovieList from '../containers/MovieList'
+import TrendingMovieList from '../containers/TrendingMovieList'
+
 
 const Movies = () => {
   return (
     <div>
-        <MovieList/>
+        <TrendingMovieList/>
+
     </div>
   )
 }

@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Typography } from "@mui/material";
+import { motion, useMotionValue } from "framer-motion";
 
 import tmdb from "../apis/tmdb";
 import MovieCard from "../components/movieCard/MovieCard";
-import './SeriesList.css';
+import './TrendingSeriesList.css';
 
 
-const SeriesList = () => {
+const TrendingSeriesList = () => {
     const [movies, setMovies] = useState([]);
+    const [width, setWidth] = useState(0);
+    const carousel = useRef();
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -22,6 +25,11 @@ const SeriesList = () => {
         fetchMovies();
       }, []);
 
+    useEffect(() => {
+      console.log(carousel.current.scrollWidth, carousel.current.offsideWidh)
+      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+    },[])
+
   return (
     <>
       <Box className={"series-list"}>
@@ -30,17 +38,24 @@ const SeriesList = () => {
             Trending Series
           </Typography>
         </div>
-        <Box className={"list-series"}>
-          <div>
+        <motion.div ref={carousel}>
+          <motion.div
+            drag="x"
+            dragConstraints={{right: 0, left: -1597}}
+            
+            className="series-carousel"
+          >
             {movies.map((movie)=>(
               // <SeriesCard key={movie.title} movie={movie}></SeriesCard>
-              <MovieCard key={movie.title} movie={movie}></MovieCard>
+              <motion.div className="series-item">
+                <MovieCard key={movie.title} movie={movie}></MovieCard>
+              </motion.div>
             ))}
-          </div>
-        </Box>
+            </motion.div>
+          </motion.div>
       </Box>
     </>
   );
 };
 
-export default SeriesList;
+export default TrendingSeriesList;

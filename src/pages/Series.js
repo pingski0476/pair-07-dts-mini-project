@@ -1,10 +1,10 @@
 import React from 'react';
-import SeriesList from '../containers/SeriesList';
+import TrendingSeriesList from '../containers/TrendingSeriesList';
 
 const Series = () => {
   return (
     <div>
-      <SeriesList/>
+      <TrendingSeriesList/>
     </div>
   )
 }

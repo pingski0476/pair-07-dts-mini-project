@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 import tmdb from "../apis/tmdb";
 import MovieCard from "../components/movieCard/MovieCard";
 
-import "./MovieList.css";
+import "./TrendingMovieList.css";
 
-const MovieList = () => {
+const TrendingMovieList = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const fetchedMovies = await tmdb.get("trending/movie/week");
+        const fetchedMovies = await tmdb.get("trending/movie/day");
         setMovies(fetchedMovies.data.results);
       } catch (error) {
         console.log(error);
@@ -33,7 +33,9 @@ const MovieList = () => {
         <Box className={"list"}>
           <div>
             {movies.map((movie) => (
+              <div className="movies-item">
               <MovieCard key={movie.title} movie={movie}></MovieCard>
+              </div>
             ))}
           </div>
         </Box>
@@ -42,4 +44,4 @@ const MovieList = () => {
   );
 };
 
-export default MovieList;
+export default TrendingMovieList;

@@ -14,7 +14,7 @@ const MovieCard = ({ movie }) => {
         sx={{
           width: 165,
           height: 250,
-          cursor: 'pointer',
+          pointerEvents: 'none',
           borderRadius: 5,
           '&:hover' : {opacity: 0.7, transition: "0.5s"}  
         }}
