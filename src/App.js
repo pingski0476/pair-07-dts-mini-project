@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import "./App.css";
+import { logoutUser } from "./auth/firebase";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navi = useNavigate();
+
+  const buttonLogoutHandler = async () => {
+    await logoutUser();
+    navi("/login");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Halo ini Home</h1>
+      <Link to={"/login"}>Menuju Login</Link>
+      <Button onClick={buttonLogoutHandler}>Logout</Button>
     </div>
   );
 }
