@@ -1,16 +1,16 @@
-.Bcontainer-list {
+.Tcontainer-list {
 	display: flex;
 	flex-direction: column;
 	height: 450px;
 	/* margin-top: 5vh; */
 	background-image: url(../../footer-bg.jpg);
 	/* background-size: cover; */
-	/* background-color: blue; */
+	background-color: black;
 	align-items: center;
 	justify-content: center;
 	padding-bottom: 150px;
 }
-.Btitle-box {
+.Ttitle-box {
 	/* display: flex; */
 	/* background-color: white; */
 	display: flex;
@@ -19,7 +19,7 @@
 	margin-top: 150px;
 }
 
-.Blist {
+.Tlist {
 	margin-top: 5vh;
 	margin-left: 70px;
 	margin-right: auto;
@@ -34,22 +34,22 @@
 	gap: 15px;
 }
 
-.Blist div {
+.Tlist div {
 	display: grid;
 	gap: 5px;
 	grid-template-columns: repeat(10, 1fr);
 	margin-bottom: 10vh;
 	height: 450px;
 }
-.Bcontainer-title {
+.Tcontainer-title {
 	color: white;
 }
-.Bmovies-item {
+.Tmovies-item {
 	cursor: pointer;
 	/* display: flex; */
 	height: 450px;
 }
-.Bmovies-item:hover {
+.Tmovies-item:hover {
 	opacity: 0.7;
 	transition: "0.5s";
 }

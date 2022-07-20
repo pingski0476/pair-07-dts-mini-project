@@ -10,41 +10,41 @@ import tmdb from "../../apis/tmdb";
 import "./BigTrendingList.css";
 
 const BigTrendingList = () => {
-	const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
-	useEffect(() => {
-		const fetchMovies = async () => {
-			try {
-				const fetchedMovies = await tmdb.get("trending/movie/week");
-				setMovies(fetchedMovies.data.results.slice(0, 5));
-			} catch (error) {
-				console.log(error);
-			}
-		};
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const fetchedMovies = await tmdb.get("trending/movie/week");
+        setMovies(fetchedMovies.data.results.slice(0, 5));
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-		fetchMovies();
-	}, []);
+    fetchMovies();
+  }, []);
 
-	return (
-		<>
-			<Box className={"Bcontainer-list"}>
-				<div className={"Btitle-box"}>
-					<Typography className={"Bcontainer-title"} variant="h3" component="h3">
-						Top 5
-					</Typography>
-				</div>
-				<Box className={"Blist"}>
-					<div className={"Blist-container"}>
-						{movies.map((movie) => (
-							<div className="Bmovies-item">
-								<BigPoster key={movie.title} movie={movie}></BigPoster>
-							</div>
-						))}
-					</div>
-				</Box>
-			</Box>
-		</>
-	);
+  return (
+    <>
+      <Box className={"Bcontainer-list"}>
+        <div className={"Btitle-box"}>
+          <Typography className={"Bcontainer-title"} variant="h3" component="h3">
+            Top 5
+          </Typography>
+        </div>
+        <Box className={"Blist"}>
+          <div className={"Blist-container"}>
+            {movies.map((movie) => (
+              <div className="Bmovies-item">
+              <BigPoster key={movie.title} movie={movie}></BigPoster>
+              </div>
+            ))}
+          </div>
+        </Box>
+      </Box>
+    </>
+  );
 };
 
 export default BigTrendingList;

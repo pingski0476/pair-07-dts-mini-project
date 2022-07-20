@@ -1,17 +1,19 @@
 import React from 'react';
-import TrendingSeriesList from '../containers/TrendingSeriesList';
-import image from '../components/Navbar/image 3.png'
-import './Series.css'
+
+import UpComingMovie from '../containers/UpComingMovie/UpComingMovie'
+import BigTrendingSeries from '../containers/BigTrendingSeries/BigTrendingSeries';
+import TopRatedSeries from '../containers/topRatedSeries/TopRatedSeries';
+
 
 const Series = () => {
   
   return (
-    <div className={"image"}>
-      <img className={"image__img"} src={image} alt=""/>
-      <div className={"image__overlay"}>
-        <p>ini gambarnya</p>
-      </div>
+    <div>
+        <BigTrendingSeries/>
+        <TopRatedSeries/>
+        <UpComingMovie/>
     </div>
+
   )
 }
 
@@ -19,4 +21,3 @@ export default Series;
 
 
 
-// {`${BASE_IMAGE_URL}${movie.backdrop_path}`}
