@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
+import { blue, grey, red, white } from "@mui/material/colors";
 import "./HeroItem.css";
 
 const BACKGROUND_IMAGE_URL = "https://image.tmdb.org/t/p/original";
@@ -9,11 +9,22 @@ const BACKGROUND_IMAGE_URL = "https://image.tmdb.org/t/p/original";
 const PlayButton = styled(Button)(({ theme }) => ({
 	color: theme.palette.getContrastText(red[500]),
 	backgroundColor: red[500],
-	borderRadius: 25,
+	borderRadius: 5,
 	marginRight: 15,
 	height: 50,
 	"&:hover": {
 		backgroundColor: red[900],
+	},
+}));
+
+const MoreButton = styled(Button)(({ theme }) => ({
+	color: theme.palette.getContrastText('#fafafa'),
+	backgroundColor: grey[500],
+	borderRadius: 5,
+	marginRight: 15,
+	height: 50,
+	"&:hover": {
+		backgroundColor: "#fafafa",
 	},
 }));
 
@@ -29,7 +40,7 @@ const HeroItems = ({ movie }) => {
 				<PlayButton variant="contained" size="large">
 					Play Trailer
 				</PlayButton>
-				<button className="button-details">Details</button>
+				<MoreButton className="button-details">more</MoreButton>
 			</div>
 		</div>
 	);

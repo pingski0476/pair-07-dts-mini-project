@@ -1,21 +1,17 @@
-/* .bd-container{
-    width: 500px;
-    height: 500px;
-    background-color: blue;
-    display: block;
-   
-} */
-.image {
+.Bposter {
     position: relative;
-    width: 400px;
-
+    width: 300px;
+    height: 450px;
+    /* background-color: #fff; */
+    margin-bottom: 50px;
+    padding-top: 0;
 }
-
-.image__img{
+.Bposter__img{
     display: block;
-    width: 100%;
+    width: 300px;
+    height: 450px;
 }
-.image__overlay {
+.Bposter__overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,18 +26,22 @@
     justify-content: center;
     opacity: 0;
     transition: opacity 0.25s;
+
+    /* font-size: larger; */
 }
-.image__overlay:hover {
+.Bposter__overlay:hover {
     opacity: 1;
 }
-.image__title {
-    font-size: 1.5em;
-    font-weight: bold;
+.Bposter__title {
+    /* font-size: larger; */
+    margin-left: 75px;
+
 }
-.image__overlay > * {
+.Bposter__overlay > * {
     transform: translateY(20px);
     transition: transform 0.25s;
 }
-.image__overlay:hover > * {
+.Bposter__overlay:hover > * {
     transform: translateY(0);
 }
+

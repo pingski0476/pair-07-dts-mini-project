@@ -1,21 +1,18 @@
-/* .bd-container{
-    width: 500px;
-    height: 500px;
-    background-color: blue;
-    display: block;
-   
-} */
-.image {
+.poster {
     position: relative;
-    width: 400px;
+    width: 165px;
+    height: 250px;
+    /* background-color: #fff; */
 
 }
 
-.image__img{
+.poster__img{
     display: block;
-    width: 100%;
+    width: 165px;
+    height: 250px;
+    border-radius: 15px;
 }
-.image__overlay {
+.poster__overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,18 +27,21 @@
     justify-content: center;
     opacity: 0;
     transition: opacity 0.25s;
+    /* font-size: larger; */
 }
-.image__overlay:hover {
+.poster__overlay:hover {
     opacity: 1;
 }
-.image__title {
-    font-size: 1.5em;
-    font-weight: bold;
+.poster__title {
+    /* font-size: larger; */
+    margin-left: 54px;
+
 }
-.image__overlay > * {
+.poster__overlay > * {
     transform: translateY(20px);
     transition: transform 0.25s;
 }
-.image__overlay:hover > * {
+.poster__overlay:hover > * {
     transform: translateY(0);
 }
+

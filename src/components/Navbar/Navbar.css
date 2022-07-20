@@ -7,6 +7,7 @@
     /* position: fixed; */
     top: 10;
 }
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -25,9 +26,8 @@
     text-decoration: none;
     gap: 10px;
     justify-content: center;
-   
-
 }
+
 /* .left span{
     margin-right: 20px;
     cursor: pointer;
@@ -39,9 +39,11 @@
     justify-content: space-around;
 } */
 .right{
-    /* display: flex;
-    flex-direction: row; */
-
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     cursor: pointer;
-    background-color: blue;
+    /* background-color: blue; */
 }

@@ -11,8 +11,6 @@ import tmdb from "../../apis/tmdb";
 
 const BACKGROUND_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
-
-
 const Hero = () => {
 	const [movieItems, setMovieItems] = useState([]);
 	const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,17 +38,21 @@ const Hero = () => {
 
 	return (
 		<div className="hero">
-			<span>Discover</span>
-			{/* <ArrowBackIosRounded className="arrow-left" />
-				<ArrowForwardIosRounded className="arrow-right" /> */}
+			<span>Watch now!</span>
+	
+	{/*DATA HILANG SAAT REFRESH-----------------------  */}
+
+					<div className="hero-slide">
+					
+						{movieItems.map((movie) => (
+							<div className="hero-items">
+								<HeroItems key={movie.title} movie={movie} />
+							</div>
+						))}
+					
+					</div>
+	{/* --------------------------------------------------- */}
 			
-			<div className="hero-slide">
-					{movieItems.map((movie) => (
-						<div className="hero-items">
-							<HeroItems key={movie.title} movie={movie} />
-						</div>
-					))}
-				</div>
 
 			{/* {movieItems && (
 				<div className="hero-slide">

@@ -21,7 +21,8 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img src={logo} alt=""></img>
-          <NavLink to="/" style={{ color: "inherit", textDecoration: "none" }}>
+  
+          <NavLink to="/" style={{ color: "inherit", textDecoration: "none",  }}>
             Home
           </NavLink>
           <NavLink
@@ -38,11 +39,8 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="right">
-          <Search />
-          {/* <UserLog/> */}
-        </div>
-        <div className="right">
-          <Button onClick={logoutHandler}>Logout</Button>
+          <Search style={{ mt: 50}}/>
+          <Button style={{color: 'red'}}onClick={logoutHandler}>Logout</Button>
         </div>
       </div>
     </div>

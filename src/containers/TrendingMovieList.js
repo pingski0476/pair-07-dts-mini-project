@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 import tmdb from "../apis/tmdb";
+import CardWithButton from "../components/CardWithButton";
 import MovieCard from "../components/movieCard/MovieCard";
 
 import "./TrendingMovieList.css";
@@ -35,7 +36,7 @@ const TrendingMovieList = () => {
           <div>
             {movies.map((movie) => (
               <div className="movies-item">
-              <MovieCard key={movie.title} movie={movie}></MovieCard>
+              <CardWithButton key={movie.title} movie={movie}></CardWithButton>
               </div>
             ))}
           </div>
