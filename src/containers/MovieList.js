@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import tmdb from "../apis/tmdb";
 import MovieCard from "../components/movieCard/MovieCard";
@@ -33,7 +34,9 @@ const MovieList = () => {
         <Box className={"list"}>
           <div>
             {movies.map((movie) => (
-              <MovieCard key={movie.title} movie={movie}></MovieCard>
+              <Link to={`/movies/${movie.id}`}>
+                <MovieCard href key={movie.title} movie={movie}></MovieCard>
+              </Link>
             ))}
           </div>
         </Box>
@@ -43,3 +46,12 @@ const MovieList = () => {
 };
 
 export default MovieList;
+
+// export function getMovies() {
+//   return movies;
+// }
+
+// // Asumsikan ini fungsi GET /id
+// export function getMovie(movieId) {
+//   return movies.find((movie) => movie.id === movieId);
+// }

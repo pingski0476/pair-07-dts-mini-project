@@ -12,28 +12,16 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProtectedComponent from "./components/ProtectedComponent";
 import ProtectedLogin from "./components/ProtectedLogin";
+import MovieDetails from "./pages/MovieDetails";
+import SeriesDetails from "./pages/SeriesDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedComponent>
-              <App />
-            </ProtectedComponent>
-          }
-        >
-          <Route
-            path="/"
-            element={
-              <ProtectedComponent>
-                <Home />
-              </ProtectedComponent>
-            }
-          />
+        <Route path="/" element={<App />}>
+          <Route path="/" element={<Home />} />
           <Route
             path="movies"
             element={
@@ -67,6 +55,8 @@ root.render(
             </ProtectedLogin>
           }
         />
+        <Route path="movies/:movieId" element={<MovieDetails />} />
+        <Route path="series/:seriesId" element={<SeriesDetails />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
