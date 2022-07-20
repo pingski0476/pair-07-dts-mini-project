@@ -20,7 +20,9 @@ const PlayButton = styled(Button)(({ theme }) => ({
 const HeroItems = ({ movie }) => {
 	return (
 		<div className="hero-items">
-			<div className="hero-bg-image">{movie.backdrop_path && <img src={BACKGROUND_IMAGE_URL + movie.backdrop_path} alt={movie.title} />}</div>
+			{/* <div className="hero-bg-image"> */}
+			<img src={`${BACKGROUND_IMAGE_URL}${movie.backdrop_path}`} alt="" />
+			{/* </div> */}
 			<div className="heroItems-content">
 				<h1 className={"movie-title"}>{movie.title}</h1>
 				<p className={"movie-overview"}>{movie.overview}</p>

@@ -38,10 +38,10 @@ const TrendingSeriesList = () => {
 					</Typography>
 				</div>
 				<motion.div ref={carousel}>
-					<motion.div drag="x" dragConstraints={{ right: 0, left: -1597 }} className="series-carousel">
+					<motion.div drag="x" dragConstraints={{ right: 0, left: -1610}} className="series-carousel">
 						{movies.map((movie) => (
 							// <SeriesCard key={movie.title} movie={movie}></SeriesCard>
-							<motion.div className="series-item">
+							<motion.div  className="series-item">
 								<MovieCard key={movie.title} movie={movie}></MovieCard>
 							</motion.div>
 						))}

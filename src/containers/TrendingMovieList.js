@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import Slider from "react-slick";
 
 import tmdb from "../apis/tmdb";
 import MovieCard from "../components/movieCard/MovieCard";
@@ -12,7 +13,7 @@ const TrendingMovieList = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const fetchedMovies = await tmdb.get("trending/movie/day");
+        const fetchedMovies = await tmdb.get("trending/movie/week");
         setMovies(fetchedMovies.data.results);
       } catch (error) {
         console.log(error);

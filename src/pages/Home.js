@@ -5,8 +5,8 @@ import Hero from '../components/hero/Hero'
 import TrendingSeriesList from '../containers/TrendingSeriesList';
 
 
-import MovieList from "../containers/MovieList";
-import SeriesList from "../containers/SeriesList";
+// import MovieList from "../containers/MovieList";
+// import SeriesList from "../containers/SeriesList";
 
 const Home = () => {
   return (

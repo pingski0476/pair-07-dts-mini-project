@@ -3,9 +3,9 @@
   flex-direction: column;
   height: auto;
   /* margin-top: 5vh; */
-  background-image: url(../footer-bg.jpg);
+  /* background-image: url(../footer-bg.jpg); */
   /* background-size: cover; */
-  /* background-color: blue; */
+  background-color: black;
 }
 .title-box{
     /* display: flex; */
@@ -18,7 +18,7 @@
 }
 
 .list {
-  margin-top: 5vh;
+  margin-top: 15vh;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
@@ -27,7 +27,7 @@
   height: 100%;
   display: grid;
   justify-content: center;
-  gap: 15px;
+  gap: 5px;
 }
 
 .list div {
