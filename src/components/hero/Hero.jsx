@@ -10,6 +10,7 @@ import HeroItems from "./HeroItems";
 import tmdb from "../../apis/tmdb";
 
 const BACKGROUND_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
+const FEATURED_API = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=af715024a63a4ad95f21dff49888056e';
 
 const Hero = () => {
 	const [movieItems, setMovieItems] = useState([]);
@@ -36,6 +37,8 @@ const Hero = () => {
 		fetchMovies();
 	}, []);
 
+
+
 	return (
 		<div className="hero">
 			<span>Watch now!</span>
@@ -52,20 +55,7 @@ const Hero = () => {
 					
 					</div>
 	{/* --------------------------------------------------- */}
-			
-
-			{/* {movieItems && (
-				<div className="hero-slide">
-					{movieItems.map((movie) => (
-						<div className="hero-items">
-							<HeroItems key={movie.title} movie={movie} />
-						</div>
-					))}
-				</div>
-			)} */}
-			{/* {data.results.map((movie) =>(
-					<HeroItems key={movie.title} movie={movie} />
-				))} */}
+				
 		</div>
 	);
 };

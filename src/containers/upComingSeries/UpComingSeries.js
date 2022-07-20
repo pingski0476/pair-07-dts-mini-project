@@ -12,7 +12,7 @@ const UpComingSeries = () => {
         const fetchMovies = async () => {
             try{
                 const fetchedMovies = await tmdb.get("tv/popular");
-                setMovies(fetchedMovies.data.results.slice(2, 20));
+                setMovies(fetchedMovies.data.results.slice());
             }catch(error){
                 console.log(error);
             }
