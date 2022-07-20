@@ -3,6 +3,7 @@ import BigTrendingList from '../containers/BigTrendingList/BigTrendingList'
 import TopRatedMovie from '../containers/topRatedMovie/TopRatedMovie'
 import TrendingMovieList from '../containers/TrendingMovieList'
 import UpComingMovie from '../containers/UpComingMovie/UpComingMovie'
+import UpComingSeries from '../containers/upComingSeries/UpComingSeries'
 
 
 const Movies = () => {

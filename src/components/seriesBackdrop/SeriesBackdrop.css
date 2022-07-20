@@ -45,3 +45,12 @@
 .image__overlay:hover > * {
     transform: translateY(0);
 }
+.image__rating{
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+

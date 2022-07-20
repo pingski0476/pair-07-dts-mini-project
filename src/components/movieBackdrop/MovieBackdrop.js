@@ -14,6 +14,10 @@ const MovieBackdrop = ({ movie }) => {
 			<div className={"image__overlay"}>
 				<p className={"image__title"}>{movie.title}</p>
 			</div>
+			<div className={"image__rating"}>
+				<p>{movie.title}</p>
+				<p>⭐{movie.vote_average}</p>
+			</div>
 		</div>
 	);
 };

@@ -14,6 +14,10 @@ const SeriesBackdrop = ({ movie }) => {
 			<div className={"image__overlay"}>
 				<p className={"image__title"}>{movie.name}</p>
 			</div>
+			<div className={"image__rating"}>
+				<p>{movie.name}</p>
+				<p>⭐{movie.vote_average}</p>
+			</div>
 		</div>
 	);
 };
