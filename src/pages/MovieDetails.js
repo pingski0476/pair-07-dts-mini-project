@@ -61,7 +61,7 @@ const MovieDetails = () => {
           Play Trailer
         </PlayButton>
         <DetailsButton variant="contained" size="large">
-          Details
+          More Information
         </DetailsButton>
       </div>
     </div>

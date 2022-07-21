@@ -1,16 +1,20 @@
-import React from "react";
+import React from 'react';
 
-import MovieList from "../containers/MovieList";
-import Hero from "../components/hero/Hero";
-import SeriesList from "../containers/SeriesList";
+import TrendingMovieList from '../containers/TrendingMovieList';
+import Hero from '../components/hero/Hero'
+import TrendingSeriesList from '../containers/TrendingSeriesList';
+
+
+// import MovieList from "../containers/MovieList";
+// import SeriesList from "../containers/SeriesList";
 
 const Home = () => {
   return (
     <>
       <div>
-        <Hero />
-        <MovieList />
-        <SeriesList />
+      <Hero/>
+      <TrendingMovieList/>
+      <TrendingSeriesList/>
       </div>
     </>
   );

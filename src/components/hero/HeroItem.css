@@ -1,27 +1,29 @@
 .hero-items {
-  /* display: flex;
-  flex-direction: row; */
-  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 1920px;
   height: 100%;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* background-color: red; */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
 }
-.hero-bg-image {
-  width: 100%;
-}
-.hero-bg-image img {
+.hero-items img {
   position: relative;
-  width: 1920px;
-  height: 100vh;
-  /* margin-top: -40px; */
+  justify-content: center;
+  /* align-items: center; */
+  width: 1500px;
+  height: 100%;
+  /* object-fit: cover; */
+  /* margin-right: -100; */
   /* size-adjust: 100%; */
 }
 .heroItems-content {
   color: #fff;
   font-size: 15px;
   position: absolute;
-  left: 5%;
+  left: 15%;
   bottom: 25%;
   right: 50%;
 }

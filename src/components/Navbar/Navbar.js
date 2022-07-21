@@ -24,6 +24,7 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img src={logo} alt=""></img>
+
           <NavLink to="/" style={{ color: "inherit", textDecoration: "none" }}>
             Home
           </NavLink>

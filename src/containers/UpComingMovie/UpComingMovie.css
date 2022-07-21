@@ -1,0 +1,26 @@
+.rated-container {
+	display: flex;
+	flex-direction: column;
+	/* background-image: url(../../footer-bg.jpg); */
+	background-color: black;
+	margin-top: 0px;
+	height: 40vh;
+}
+.rated-title {
+	font-size: 30px;
+	color: white;
+	/* background-color: blue; */
+	margin-top: 0px;
+	width: 50vh;
+	height: 7vh;
+	justify-content: center;
+}
+.rated-title h3{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.ratedM-items {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
