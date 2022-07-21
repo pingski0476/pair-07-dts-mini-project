@@ -43,8 +43,6 @@ const Navbar = () => {
         <div className="right">
           <Search />
           {/* <UserLog/> */}
-        </div>
-        <div className="right">
           <Button
             onClick={logoutHandler}
             variant="text"

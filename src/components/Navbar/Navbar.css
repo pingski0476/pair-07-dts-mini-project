@@ -1,10 +1,10 @@
 .navbar{
     width: 100%;
-    z-index: 9999;
+    /* z-index: 9999; */
     background-color: black;
     color: #fff;
     font-size: 15px;
-    position: fixed;
+    /* position: fixed; */
     top: 10;
 }
 .container {

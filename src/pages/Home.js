@@ -9,8 +9,10 @@ const Home = () => {
     <>
       <div>
         <Hero />
+        <div>
         <MovieList />
         <SeriesList />
+        </div>
       </div>
     </>
   );
