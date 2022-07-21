@@ -17,7 +17,7 @@ const BigTrendingList = () => {
     const fetchMovies = async () => {
       try {
         const fetchedMovies = await tmdb.get("trending/movie/week");
-        setMovies(fetchedMovies.data.results.slice(1, 4));
+        setMovies(fetchedMovies.data.results.slice(1, 6));
       } catch (error) {
         console.log(error);
       }

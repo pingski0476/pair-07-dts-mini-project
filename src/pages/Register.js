@@ -10,6 +10,9 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import logo from "../components/Navbar/image 3.png";
+import { red } from "@mui/material/colors";
+import { styled } from "@mui/material/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { registerEmailPassword, auth } from "../config/firebase";
 import { useNavigate, Link } from "react-router-dom";
@@ -29,6 +32,17 @@ function Copyright(props) {
     </Typography>
   );
 }
+
+const PlayButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(red[500]),
+  backgroundColor: red[500],
+  borderRadius: 25,
+  marginRight: 15,
+  height: 50,
+  "&:hover": {
+    backgroundColor: red[900],
+  },
+}));
 
 const theme = createTheme();
 
@@ -80,9 +94,7 @@ function Register() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} src={logo}></Avatar>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
@@ -125,14 +137,14 @@ function Register() {
                 />
               </Grid>
             </Grid>
-            <Button
+            <PlayButton
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
-            </Button>
+            </PlayButton>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link to={"/login"}>Sudah punya akun? Sign In</Link>

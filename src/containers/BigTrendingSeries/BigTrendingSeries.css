@@ -1,55 +1,54 @@
 .Tcontainer-list {
-	display: flex;
-	flex-direction: column;
-	height: 450px;
-	/* margin-top: 5vh; */
-	background-image: url(../../footer-bg.jpg);
-	/* background-size: cover; */
-	background-color: black;
-	align-items: center;
-	justify-content: center;
-	padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  /* margin-top: 5vh; */
+  background-image: url(../../footer-bg.jpg);
+  /* background-size: cover; */
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 150px;
 }
 .Ttitle-box {
-	/* display: flex; */
-	/* background-color: white; */
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin-top: 150px;
+  /* display: flex; */
+  /* background-color: white; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 150px;
 }
 
 .Tlist {
-	margin-top: 5vh;
-	margin-left: 70px;
-	margin-right: auto;
-	padding: 10px;
-	/* background-color: red; */
-	width: auto;
-	height: 450px;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	gap: 15px;
+  margin-top: 5vh;
+  margin-right: auto;
+  padding: 10px;
+  /* background-color: red; */
+  width: auto;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
 .Tlist div {
-	display: grid;
-	gap: 5px;
-	grid-template-columns: repeat(10, 1fr);
-	margin-bottom: 10vh;
-	height: 450px;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(10, 1fr);
+  margin-bottom: 10vh;
+  height: 450px;
 }
 .Tcontainer-title {
-	color: white;
+  color: white;
 }
 .Tmovies-item {
-	cursor: pointer;
-	/* display: flex; */
-	height: 450px;
+  cursor: pointer;
+  /* display: flex; */
+  height: 450px;
 }
 .Tmovies-item:hover {
-	opacity: 0.7;
-	transition: "0.5s";
+  opacity: 0.7;
+  transition: "0.5s";
 }
