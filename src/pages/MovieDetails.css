@@ -1,0 +1,46 @@
+.hero-bg-image {
+  width: 100%;
+}
+.hero-bg-image img {
+  background-size: cover;
+}
+.heroItems-content {
+  color: #fff;
+  font-size: 15px;
+  position: absolute;
+  left: 5%;
+  bottom: 25%;
+  right: 50%;
+}
+
+.button-details {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  height: 50px;
+  border: none;
+}
+/* .hero-title {
+    color: red;
+    font-size: 80px;
+    z-index: 1;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+  }
+  .hero .arrow-left {
+    color: red;
+    font-size: 100px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+  }
+  .hero .arrow-right {
+    color: red;
+    font-size: 100px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+  } */

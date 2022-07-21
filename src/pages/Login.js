@@ -8,12 +8,14 @@ import Checkbox from "@mui/material/Checkbox";
 import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { styled } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { auth, loginUser } from "../config/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import logo from "../components/Navbar/image 3.png";
 
 function Copyright(props) {
   return (
@@ -29,6 +31,17 @@ function Copyright(props) {
     </Typography>
   );
 }
+
+const PlayButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(red[500]),
+  backgroundColor: red[500],
+  borderRadius: 25,
+  marginRight: 15,
+  height: 50,
+  "&:hover": {
+    backgroundColor: red[900],
+  },
+}));
 
 const theme = createTheme();
 const Login = () => {
@@ -79,9 +92,7 @@ const Login = () => {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }} src={logo}></Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -117,14 +128,14 @@ const Login = () => {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Button
+            <PlayButton
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
               Login
-            </Button>
+            </PlayButton>
             <Grid container>
               <Grid item xs>
                 Lupa Password?

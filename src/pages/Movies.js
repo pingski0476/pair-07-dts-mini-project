@@ -1,12 +1,19 @@
-import React from 'react'
-import MovieList from '../containers/MovieList'
+import React from "react";
+import BigTrendingList from "../containers/BigTrendingList/BigTrendingList";
+import TopRatedMovie from "../containers/topRatedMovie/TopRatedMovie";
+
+import UpComingMovie from "../containers/UpComingMovie/UpComingMovie";
 
 const Movies = () => {
   return (
-    <div>
-        <MovieList/>
+    <div sx={{ mt: "5px" }}>
+      <BigTrendingList />
+      <div>
+        <TopRatedMovie />
+        <UpComingMovie />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Movies
+export default Movies;

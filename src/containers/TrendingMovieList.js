@@ -1,19 +1,22 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import Slider from "react-slick";
 
 import tmdb from "../apis/tmdb";
+import CardWithButton from "../components/CardWithButton";
 import MovieCard from "../components/movieCard/MovieCard";
+import { Link } from "react-router-dom";
 
-import "./MovieList.css";
+import "./TrendingMovieList.css";
 
-const MovieList = () => {
+const TrendingMovieList = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         const fetchedMovies = await tmdb.get("trending/movie/week");
-        setMovies(fetchedMovies.data.results);
+        setMovies(fetchedMovies.data.results.slice(1, 10));
       } catch (error) {
         console.log(error);
       }
@@ -33,7 +36,12 @@ const MovieList = () => {
         <Box className={"list"}>
           <div>
             {movies.map((movie) => (
-              <MovieCard key={movie.title} movie={movie}></MovieCard>
+              <Link to={`/movies/${movie.id}`} className="movies-item">
+                <CardWithButton
+                  key={movie.title}
+                  movie={movie}
+                ></CardWithButton>
+              </Link>
             ))}
           </div>
         </Box>
@@ -42,4 +50,4 @@ const MovieList = () => {
   );
 };
 
-export default MovieList;
+export default TrendingMovieList;

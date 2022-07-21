@@ -1,12 +1,14 @@
 .navbar{
     width: 100%;
-    z-index: 9999;
+    max-height: 80px;
+    /* z-index: 9999; */
     background-color: black;
     color: #fff;
     font-size: 15px;
-    position: fixed;
+    /* position: fixed; */
     top: 10;
 }
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -16,6 +18,7 @@
     
 }
 .left img {
+    width: 65px;
     height: 80px;  
     margin-right: 40px;  
 }
@@ -24,22 +27,29 @@
     align-items: center;
     text-decoration: none;
     gap: 10px;
-    justify-content: space-between;
-   
-
+    justify-content: center;
 }
+
 /* .left span{
     margin-right: 20px;
     cursor: pointer;
 } */
-.navbar-menu{
+/* .navbar-menu{
     background-color: blue;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
+} */
 .right{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
+    width: 300px;
     cursor: pointer;
+    /* background-color: blue; */
+}
+.search{
+    display: flex;
 }
