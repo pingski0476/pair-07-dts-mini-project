@@ -1,6 +1,7 @@
 .navbar{
     width: 100%;
-    z-index: 9999;
+    max-height: 80px;
+    /* z-index: 9999; */
     background-color: black;
     color: #fff;
     font-size: 15px;
@@ -17,6 +18,7 @@
     
 }
 .left img {
+    width: 65px;
     height: 80px;  
     margin-right: 40px;  
 }
@@ -44,6 +46,10 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 300px;
     cursor: pointer;
     /* background-color: blue; */
+}
+.search{
+    display: flex;
 }

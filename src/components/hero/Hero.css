@@ -1,9 +1,9 @@
 .hero {
-	/* margin-top: 4vh; */
+
 	width: 100%;
 	max-height: 100%;
 	background-image: url(../footer/footer-bg.jpg);
-	/* background-color: green; */
+
 }
 .hero span {
 	color: white;
@@ -17,15 +17,9 @@
 .hero-slide {
 	display: flex;
     flex-direction: row;
-
-
-	/* display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	gap: 0; */
 }
 .hero-items {
-	/* display: flex;
-	flex-direction: row; */
+
 }
 .hero-content .arrow-left {
 	color: white;
@@ -47,3 +41,6 @@
 	right: 5%;
 	cursor: pointer;
 }
+
+
+

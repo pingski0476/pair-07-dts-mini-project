@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Search } from "@mui/icons-material";
 import "./Navbar.css";
 import logo from "./image 3.png";
@@ -8,43 +8,44 @@ import { Button } from "@mui/material";
 
 // import UserLog from "./UserLog";
 
+
+
 const Navbar = () => {
-  const navi = useNavigate();
+	const navi = useNavigate();
 
-  const logoutHandler = async () => {
-    await logoutUser();
-    navi("/login");
-  };
 
-  return (
-    <div className="navbar">
-      <div className="container">
-        <div className="left">
-          <img src={logo} alt=""></img>
-  
-          <NavLink to="/" style={{ color: "inherit", textDecoration: "none",  }}>
-            Home
-          </NavLink>
-          <NavLink
-            to="/movies"
-            style={{ color: "white", textDecoration: "none" }}
-          >
-            Movies
-          </NavLink>
-          <NavLink
-            to="/series"
-            style={{ color: "white", textDecoration: "none" }}
-          >
-            Series
-          </NavLink>
-        </div>
-        <div className="right">
-          <Search style={{ mt: 50}}/>
-          <Button style={{color: 'red'}}onClick={logoutHandler}>Logout</Button>
-        </div>
-      </div>
-    </div>
-  );
+	const logoutHandler = async () => {
+		await logoutUser();
+		navi("/login");
+	};
+
+
+	return (
+		<div className="navbar">
+			<div className="container">
+				<div className="left">
+					<img src={logo} alt=""></img>
+
+					<NavLink to="/" style={{ color: "inherit", textDecoration: "none" }}>
+						Home
+					</NavLink>
+					<NavLink to="/movies" style={{ color: "white", textDecoration: "none" }}>
+						Movies
+					</NavLink>
+					<NavLink to="/series" style={{ color: "white", textDecoration: "none" }}>
+						Series
+					</NavLink>
+				</div>
+				<div className="right">
+					<Search style={{ mt: 50 }} />
+					<Button style={{ color: "red" }} onClick={logoutHandler}>
+						Logout
+					</Button>
+
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Navbar;

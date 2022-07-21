@@ -9,6 +9,7 @@ import TrendingSeriesList from '../containers/TrendingSeriesList';
 // import SeriesList from "../containers/SeriesList";
 
 const Home = () => {
+
   return (
     <>
       <div>
