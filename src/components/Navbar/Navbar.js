@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Search } from "@mui/icons-material";
 import "./Navbar.css";
 import logo from "./image 3.png";
@@ -7,12 +7,8 @@ import { auth, logoutUser } from "../../config/firebase";
 import { Button } from "@mui/material";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-// import UserLog from "./UserLog";
-
-
-
 const Navbar = () => {
-	const navi = useNavigate();
+  const navi = useNavigate();
 
   const [user] = useAuthState(auth);
 
