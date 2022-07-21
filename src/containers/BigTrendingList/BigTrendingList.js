@@ -8,6 +8,7 @@ import tmdb from "../../apis/tmdb";
 // import MovieCard from "../components/movieCard/MovieCard";
 
 import "./BigTrendingList.css";
+import { Link } from "react-router-dom";
 
 const BigTrendingList = () => {
   const [movies, setMovies] = useState([]);
@@ -16,7 +17,7 @@ const BigTrendingList = () => {
     const fetchMovies = async () => {
       try {
         const fetchedMovies = await tmdb.get("trending/movie/week");
-        setMovies(fetchedMovies.data.results.slice(0, 5));
+        setMovies(fetchedMovies.data.results.slice());
       } catch (error) {
         console.log(error);
       }
@@ -36,9 +37,9 @@ const BigTrendingList = () => {
         <Box className={"Blist"}>
           <div className={"Blist-container"}>
             {movies.map((movie) => (
-              <div className="Bmovies-item">
+              <Link to={`/movies/${movie.id}`} className="Bmovies-item">
               <BigPoster key={movie.title} movie={movie}></BigPoster>
-              </div>
+              </Link>
             ))}
           </div>
         </Box>

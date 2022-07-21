@@ -3,8 +3,9 @@ import { Search } from "@mui/icons-material";
 import "./Navbar.css";
 import logo from "./image 3.png";
 import { NavLink, useNavigate } from "react-router-dom";
-import { logoutUser } from "../../config/firebase";
+import { auth, logoutUser } from "../../config/firebase";
 import { Button } from "@mui/material";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 // import UserLog from "./UserLog";
 
@@ -13,39 +14,48 @@ import { Button } from "@mui/material";
 const Navbar = () => {
 	const navi = useNavigate();
 
+  const [user] = useAuthState(auth);
 
-	const logoutHandler = async () => {
-		await logoutUser();
-		navi("/login");
-	};
+  const logoutHandler = async () => {
+    await logoutUser();
+    navi("/login");
+  };
 
-
-	return (
-		<div className="navbar">
-			<div className="container">
-				<div className="left">
-					<img src={logo} alt=""></img>
-
-					<NavLink to="/" style={{ color: "inherit", textDecoration: "none" }}>
-						Home
-					</NavLink>
-					<NavLink to="/movies" style={{ color: "white", textDecoration: "none" }}>
-						Movies
-					</NavLink>
-					<NavLink to="/series" style={{ color: "white", textDecoration: "none" }}>
-						Series
-					</NavLink>
-				</div>
-				<div className="right">
-					<Search style={{ mt: 50 }} />
-					<Button style={{ color: "red" }} onClick={logoutHandler}>
-						Logout
-					</Button>
-
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="navbar">
+      <div className="container">
+        <div className="left">
+          <img src={logo} alt=""></img>
+          <NavLink to="/" style={{ color: "inherit", textDecoration: "none" }}>
+            Home
+          </NavLink>
+          <NavLink
+            to="/movies"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            Movies
+          </NavLink>
+          <NavLink
+            to="/series"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            Series
+          </NavLink>
+        </div>
+        <div className="right">
+          <Search />
+          {/* <UserLog/> */}
+          <Button
+            onClick={logoutHandler}
+            variant="text"
+            sx={{ color: "white" }}
+          >
+            {user ? "Logout" : "Login"}
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;

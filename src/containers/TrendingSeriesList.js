@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import tmdb from "../apis/tmdb";
 import MovieCard from "../components/movieCard/MovieCard";
@@ -41,9 +42,9 @@ const TrendingSeriesList = () => {
 					<motion.div drag="x" dragConstraints={{ right: 0, left: -1610}} className="series-carousel">
 						{movies.map((movie) => (
 							// <SeriesCard key={movie.title} movie={movie}></SeriesCard>
-							<motion.div  className="series-item">
+							<Link to={`/series/${movie.id}`} className="series-item">
 								<MovieCard key={movie.title} movie={movie}></MovieCard>
-							</motion.div>
+							</Link>
 						))}
 					</motion.div>
 				</motion.div>

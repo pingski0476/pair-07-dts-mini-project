@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import tmdb from "../apis/tmdb";
 import CardWithButton from "../components/CardWithButton";
 import MovieCard from "../components/movieCard/MovieCard";
+import { Link } from "react-router-dom";
 
 import "./TrendingMovieList.css";
 
@@ -35,9 +36,9 @@ const TrendingMovieList = () => {
 				<Box className={"list"}>
 					<div>
 						{movies.map((movie) => (
-							<div className="movies-item">
+							<Link to={`/movies/${movie.id}`} className="movies-item">
 								<CardWithButton key={movie.title} movie={movie}></CardWithButton>
-							</div>
+							</Link>
 						))}
 					</div>
 				</Box>

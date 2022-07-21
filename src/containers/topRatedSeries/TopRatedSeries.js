@@ -3,6 +3,8 @@ import React, {useEffect, useState} from 'react'
 import tmdb from '../../apis/tmdb'
 import MovieBackdrop from '../../components/movieBackdrop/MovieBackdrop'
 import SeriesBackdrop from '../../components/seriesBackdrop/SeriesBackdrop'
+import { Link } from "react-router-dom";
+
 
 import './TopRatedSeries.css'
 const TopRatedSeries = () => {
@@ -28,9 +30,9 @@ const TopRatedSeries = () => {
             <Box className='ratedM-list'>
             <div className='ratedM-items'>
                 {movies.map((movie) => (
-                    <div className='ratedM-item'>
+                    <Link to={`/series/${movie.id}`} className='ratedM-item'>
                         <SeriesBackdrop key={movie.name} movie={movie}/>
-                    </div>
+                    </Link>
                 ))}
             </div>
             </Box>

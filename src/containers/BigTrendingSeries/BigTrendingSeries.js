@@ -8,6 +8,7 @@ import tmdb from "../../apis/tmdb";
 // import MovieCard from "../components/movieCard/MovieCard";
 
 import "./BigTrendingSeries.css";
+import { Link } from "react-router-dom";
 
 const BigTrendingSeries = () => {
 	const [movies, setMovies] = useState([]);
@@ -36,9 +37,9 @@ const BigTrendingSeries = () => {
 				<Box className={"Tlist"}>
 					<div className={"Tlist-container"}>
 						{movies.map((movie) => (
-							<div className="Bmovies-item">
+							<Link to={`/series/${movie.id}`} className="Bmovies-item">
 								<BigPoster key={movie.title} movie={movie}></BigPoster>
-							</div>
+							</Link>
 						))}
 					</div>
 				</Box>

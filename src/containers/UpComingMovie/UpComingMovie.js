@@ -1,5 +1,6 @@
 import { Box } from '@mui/material'
 import React, {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 import tmdb from '../../apis/tmdb'
 import MovieBackdrop from '../../components/movieBackdrop/MovieBackdrop'
 
@@ -27,9 +28,9 @@ const UpComingMovie = () => {
             <Box className='ratedM-list'>
             <div className='ratedM-items'>
                 {movies.map((movie) => (
-                    <div className='ratedM-item'>
+                    <Link to={`/movies/${movie.id}`} className='ratedM-item'>
                         <MovieBackdrop key={movie.title} movie={movie}/>
-                    </div>
+                    </Link>
                 ))}
             </div>
             </Box>
