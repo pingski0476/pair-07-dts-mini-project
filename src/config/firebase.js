@@ -12,7 +12,7 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCGFaPyt3C1qGNtjB-26ipOA_2Oi3AJyTc",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "mood-meter-8d5a7.firebaseapp.com",
   projectId: "mood-meter-8d5a7",
   storageBucket: "mood-meter-8d5a7.appspot.com",
