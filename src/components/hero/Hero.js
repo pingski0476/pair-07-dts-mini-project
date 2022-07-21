@@ -4,8 +4,6 @@ import "./Hero.css";
 import HeroItems from "./HeroItems";
 import tmdb from "../../apis/tmdb";
 
-const BACKGROUND_IMAGE_URL = "https://image.tmdb.org/t/p/w500";
-
 const Hero = () => {
   const [movieItems, setMovieItems] = useState([]);
 
