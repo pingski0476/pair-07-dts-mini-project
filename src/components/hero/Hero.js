@@ -18,7 +18,7 @@ const Hero = () => {
     const fetchMovies = async () => {
       try {
         const fetchedMovies = await tmdb.get("/discover/movie");
-        setMovieItems(fetchedMovies.data.results.slice(1, 6));
+        setMovieItems(fetchedMovies.data.results.slice(5, 6));
       } catch (error) {
         console.log(error);
       }

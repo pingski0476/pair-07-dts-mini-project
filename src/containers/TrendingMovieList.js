@@ -10,41 +10,44 @@ import { Link } from "react-router-dom";
 import "./TrendingMovieList.css";
 
 const TrendingMovieList = () => {
-	const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
-	useEffect(() => {
-		const fetchMovies = async () => {
-			try {
-				const fetchedMovies = await tmdb.get("trending/movie/week");
-				setMovies(fetchedMovies.data.results);
-			} catch (error) {
-				console.log(error);
-			}
-		};
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const fetchedMovies = await tmdb.get("trending/movie/week");
+        setMovies(fetchedMovies.data.results.slice(1, 10));
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-		fetchMovies();
-	}, []);
+    fetchMovies();
+  }, []);
 
-	return (
-		<>
-			<Box className={"container-list"}>
-				<div className={"title-box"}>
-					<Typography className={"container-title"} variant="h3" component="h3">
-						Trending Movies
-					</Typography>
-				</div>
-				<Box className={"list"}>
-					<div>
-						{movies.map((movie) => (
-							<Link to={`/movies/${movie.id}`} className="movies-item">
-								<CardWithButton key={movie.title} movie={movie}></CardWithButton>
-							</Link>
-						))}
-					</div>
-				</Box>
-			</Box>
-		</>
-	);
+  return (
+    <>
+      <Box className={"container-list"}>
+        <div className={"title-box"}>
+          <Typography className={"container-title"} variant="h3" component="h3">
+            Trending Movies
+          </Typography>
+        </div>
+        <Box className={"list"}>
+          <div>
+            {movies.map((movie) => (
+              <Link to={`/movies/${movie.id}`} className="movies-item">
+                <CardWithButton
+                  key={movie.title}
+                  movie={movie}
+                ></CardWithButton>
+              </Link>
+            ))}
+          </div>
+        </Box>
+      </Box>
+    </>
+  );
 };
 
 export default TrendingMovieList;

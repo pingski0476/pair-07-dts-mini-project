@@ -1,45 +1,40 @@
-.series-list{
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    gap: 50;
-    height: 50vh;
-    /* background-image: url(../footer-bg.jpg); */
+.series-list {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 50;
+  height: 50vh;
+  /* background-image: url(../footer-bg.jpg); */
 }
-.series-titleBox{
-    height: 5vh;
-    /* background-color: white; */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* margin-top: -10px; */
-    margin-bottom: 20px;
-    color: white;
-
+.series-titleBox {
+  height: 5vh;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* margin-top: -10px; */
+  margin-bottom: 20px;
+  color: white;
 }
-.series-title{
-    margin-bottom: 50px;
-
+.series-title {
+  margin-bottom: 50px;
 }
-.series-carousel{
-    display: flex;
-    gap:10px;
-    width: max-content;
-    margin-top: 15px;
-
+.series-carousel {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  margin-top: 15px;
 }
-.series-item{
-    /* display: flex; */
-    width: 100%;
-    gap: 10px;
-    margin-top: 15px;
-    cursor: pointer;
-    pointer-events: auto;
-
+.series-item {
+  /* display: flex; */
+  width: 100%;
+  gap: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  pointer-events: auto;
+  overflow: hidden;
 }
-.series-item:hover{
-    opacity: 0.8;
-    transition: 0.5s;
+.series-item:hover {
+  opacity: 0.8;
+  transition: 0.5s;
 }
-
-

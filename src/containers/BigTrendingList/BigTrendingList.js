@@ -17,7 +17,7 @@ const BigTrendingList = () => {
     const fetchMovies = async () => {
       try {
         const fetchedMovies = await tmdb.get("trending/movie/week");
-        setMovies(fetchedMovies.data.results.slice());
+        setMovies(fetchedMovies.data.results.slice(1, 4));
       } catch (error) {
         console.log(error);
       }
@@ -30,7 +30,11 @@ const BigTrendingList = () => {
     <>
       <Box className={"Bcontainer-list"}>
         <div className={"Btitle-box"}>
-          <Typography className={"Bcontainer-title"} variant="h3" component="h3">
+          <Typography
+            className={"Bcontainer-title"}
+            variant="h3"
+            component="h3"
+          >
             Top 5
           </Typography>
         </div>
@@ -38,7 +42,7 @@ const BigTrendingList = () => {
           <div className={"Blist-container"}>
             {movies.map((movie) => (
               <Link to={`/movies/${movie.id}`} className="Bmovies-item">
-              <BigPoster key={movie.title} movie={movie}></BigPoster>
+                <BigPoster key={movie.title} movie={movie}></BigPoster>
               </Link>
             ))}
           </div>
