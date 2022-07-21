@@ -14,9 +14,8 @@
   position: relative;
   width: 1920px;
   height: 100vh;
-  margin-top: -40px;
+  /* margin-top: -40px; */
   /* size-adjust: 100%; */
-
 }
 .heroItems-content {
   color: #fff;

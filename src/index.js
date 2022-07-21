@@ -38,6 +38,22 @@ root.render(
               </ProtectedComponent>
             }
           />
+          <Route
+            path="movies/:movieId"
+            element={
+              <ProtectedComponent>
+                <MovieDetails />
+              </ProtectedComponent>
+            }
+          />
+          <Route
+            path="series/:seriesId"
+            element={
+              <ProtectedComponent>
+                <SeriesDetails />
+              </ProtectedComponent>
+            }
+          />
         </Route>
         <Route
           path="login"
@@ -55,8 +71,6 @@ root.render(
             </ProtectedLogin>
           }
         />
-        <Route path="movies/:movieId" element={<MovieDetails />} />
-        <Route path="series/:seriesId" element={<SeriesDetails />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
